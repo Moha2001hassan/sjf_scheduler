@@ -13,11 +13,8 @@ class SchedulerApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'SJF Scheduler Simulation',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: const SchedulerScreen(),
     );
   }
 }
-

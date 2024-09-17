@@ -28,36 +28,38 @@ class _AddProcessScreenState extends State<AddProcessScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
-          child: Column(
-            children: [
-              TextFormField(
-                controller: _arrivalTimeController,
-                decoration: const InputDecoration(labelText: 'زمن الوصول'),
-                keyboardType: TextInputType.number,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'الرجاء إدخال زمن الوصول';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _burstTimeController,
-                decoration: const InputDecoration(labelText: 'وقت التنفيذ'),
-                keyboardType: TextInputType.number,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'الرجاء إدخال وقت التنفيذ';
-                  }
-                  return null;
-                },
-              ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: _addProcess,
-                child: const Text('إضافة العملية'),
-              ),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                TextFormField(
+                  controller: _arrivalTimeController,
+                  decoration: const InputDecoration(labelText: 'زمن الوصول'),
+                  keyboardType: TextInputType.number,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'الرجاء إدخال زمن الوصول';
+                    }
+                    return null;
+                  },
+                ),
+                TextFormField(
+                  controller: _burstTimeController,
+                  decoration: const InputDecoration(labelText: 'وقت التنفيذ'),
+                  keyboardType: TextInputType.number,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'الرجاء إدخال وقت التنفيذ';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: _addProcess,
+                  child: const Text('إضافة العملية'),
+                ),
+              ],
+            ),
           ),
         ),
       ),

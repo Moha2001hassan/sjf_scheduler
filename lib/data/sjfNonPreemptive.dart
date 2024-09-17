@@ -19,8 +19,7 @@ List<Process> sjfNonPreemptive(List<Process> processes) {
     currentProcess.waitingTime = currentTime - currentProcess.arrivalTime;
     currentTime += currentProcess.burstTime;
     currentProcess.completionTime = currentTime;
-    currentProcess.turnaroundTime =
-        currentProcess.completionTime - currentProcess.arrivalTime;
+    currentProcess.turnaroundTime = currentProcess.completionTime - currentProcess.arrivalTime;
 
     completedProcesses.add(currentProcess);
     availableProcesses.remove(currentProcess);

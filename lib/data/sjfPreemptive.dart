@@ -9,7 +9,6 @@ List<Process> sjfPreemptive(List<Process> processes) {
     arrivedProcesses.addAll(
         processes.where((p) => p.arrivalTime == time && !arrivedProcesses.contains(p)));
 
-    // Check if there are any arrived processes with remaining time
     var availableProcesses = arrivedProcesses.where((p) => p.remainingTime > 0).toList();
 
     if (availableProcesses.isNotEmpty) {
@@ -26,7 +25,6 @@ List<Process> sjfPreemptive(List<Process> processes) {
         arrivedProcesses.remove(currentProcess);
       }
     } else {
-      // If no process is available, increment time to simulate idle CPU time
       time++;
     }
   }
